@@ -1,0 +1,51 @@
+
+
+
+@import "mixins";
+@import "base";
+
+$body-bg: papayawhip;
+$boxes-bg: slateblue;
+$body-border: cyan;
+$main-border: black;
+
+body {
+  background-color: $body-bg;
+  border: $body-border 2px solid;
+
+  @include flexbox-container();
+
+  .container {
+    border: $main-border 2px solid;
+    padding: 1rem;
+    width: 30rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 10rem 10rem 10rem;
+    
+
+
+    .box {
+      min-width: 5rem;
+      min-height: 5rem;
+      background-color: $boxes-bg;
+      border-radius: .6rem;
+    }
+    .red{
+      grid-column: span 3;
+      background: red;
+    }
+    .blue{
+      grid-row: span 2;
+      background: blue;
+    }
+    .green{
+      grid-column: span 2;
+      background: green;
+    }
+    .purple{
+      background: purple;
+    }
+  }
+}
